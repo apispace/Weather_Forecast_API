@@ -1,0 +1,27 @@
+# 天气预报查询 - Python(http.client)调用示例代码
+
+**注意：该示例代码仅适用于 [apispace.com](https://www.apispace.com/?utm_source=github&utm_term=tqcx) 网站下的 API**。
+
+**使用该产品前，您需要通过 [https://www.apispace.com/eolink/api/456456/introduction](https://www.apispace.com/eolink/api/456456/introduction?utm_source=github&utm_term=tqcx) 申请API服务**
+
+### 智能天气实况API
+```
+import http.client
+
+conn = http.client.HTTPSConnection("eolink.o.apispace.com")
+
+payload = ""
+
+headers = {
+    "X-APISpace-Token":"",
+    "Authorization-Type":"apikey"
+}
+
+conn.request("GET","/456456/weather/v001/now?areacode=101010100", payload, headers)
+
+res = conn.getresponse()
+
+data = res.read()
+
+print(data.decode("utf-8"))
+```
