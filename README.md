@@ -2,12 +2,19 @@
 **本 API 服务由 [APISpace（apispace.com）](https://www.apispace.com/?utm_source=github&utm_term=tqcx) 提供。**
 
 APISpace 是 Eolink 旗下专业的 API 开放与交易平台，为广大企业以及个人开发者提供多维度、全方位的API接口，覆盖短信验证、天气查询、快递物流、OCR文字识别等海量 API 服务，帮助用户快速获取数据，降低获取数据的成本和难度，提升开发效率。
+
+APISpace 提供15种开发语言的代码示例，分别是：Java(OK HTTP)、PHP(pecl_http)、PHP(cURL)、Python(http.client)、Python(Requests)、HTTP、cURL、JavaScript(Jquery AJAX)、JavaScript(XHR)、NodeJS(Native)、NodeJS(Request)、微信小程序、Ruby(Net:Http)、Shell(Httpie)、Shell(cUrl)。
+
+本文档末尾提供了 Python(Requests) 的调用代码示例，可以前往文档末尾查看。
+
+更多代码示例：[https://www.apispace.com/eolink/api/456456/guidence/](https://www.apispace.com/eolink/api/456456/guidence/?utm_source=github&utm_term=tqcx)
+
 # 天气预报查询
 支持全国以及全球多个城市的天气查询，包含国内3400+个城市以及国际4万个城市的实况数据；更新频率分钟级别。
 
 **使用该产品前，您需要通过 [https://www.apispace.com/eolink/api/456456/introduction](https://www.apispace.com/eolink/api/456456/introduction?utm_source=github&utm_term=tqcx) 申请API服务**
 
-本文档提供 **天气预报查询服务** 的 **智能天气实况API** 的各种开发语言的调用代码示例，具体请查看code文件夹。
+APISpace 提供 **天气预报查询服务** 的 **智能天气实况API** 的各种开发语言的调用代码示例，具体请查看code文件夹。
 
 **该产品拥有以下APIs：**
 1. 智能天气实况
@@ -94,3 +101,22 @@ APISpace 是 Eolink 旗下专业的 API 开放与交易平台，为广大企业�
 ### 服务保障
 ![image](https://user-images.githubusercontent.com/36323798/223365050-2a81fcd2-69af-46b9-bb61-1fdc97faf768.png)
 
+### Python(Requests) 调用代码示例
+这里以 智能天气实况API 为例
+```
+import requests
+
+url = "https://eolink.o.apispace.com/456456/weather/v001/now"
+
+payload = {"areacode" : "101010100"}
+
+headers = {
+    "X-APISpace-Token":"",
+    "Authorization-Type":"apikey"
+}
+
+response=requests.request("GET", url, params=payload, headers=headers)
+
+print(response.text)
+
+```
